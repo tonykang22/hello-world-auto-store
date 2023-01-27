@@ -1,0 +1,76 @@
+package com.github.kingwaggs.ordermanager.domain.sheet;
+
+import java.util.List;
+
+public enum CurrentStatus {
+
+    SOURCE_STATUS_TO_PREPARE,
+    PURCHASE_AGENCY_REQUEST,
+    SOURCE_INVOICE_UPDATE,
+    PURCHASE_AGENCY_COMPLETE,
+    PURCHASE_AGENCY_CANCEL_REQUEST,
+    PURCHASE_AGENCY_CANCEL_COMPLETE,
+    DELIVERY_AGENCY_REQUEST,
+    DELIVERY_AGENCY_SHIPPING_WAIT,
+    DELIVERY_AGENCY_SHIPPING_START,
+    DELIVERY_AGENCY_SHIPPING_CUSTOMS,
+    DELIVERY_AGENCY_COMPLETE,
+    ERR_SOURCE_STATUS_TO_PREPARE,
+    ERR_PURCHASE_AGENCY_REQUEST,
+    ERR_PURCHASE_AGENCY_CANCEL_REQUEST,
+    ERR_DELIVERY_AGENCY_REQUEST,
+    ERR_DELIVERY_AGENCY_UPDATE,
+    ERR_DELIVERY_AGENCY_STATUS,
+    ERR_SOURCE_INVOICE_UPDATE,
+    ERR_SOURCE_REFUND_REQUEST_INQUIRY,
+    CANCEL_COMPLETE_INVALID_QUANTITY,
+    CANCEL_COMPLETE_INVALID_PRICE,
+    CANCEL_COMPLETE_INVALID_ASIN,
+    HANDLE_MANUALLY,
+    REFUND_COMPLETE;
+
+    public static List<CurrentStatus> getCurrentStatusListContainingError() {
+        return List.of(ERR_SOURCE_STATUS_TO_PREPARE,
+                CurrentStatus.ERR_DELIVERY_AGENCY_UPDATE,
+                CurrentStatus.ERR_DELIVERY_AGENCY_REQUEST,
+                CurrentStatus.ERR_SOURCE_INVOICE_UPDATE,
+                CurrentStatus.ERR_PURCHASE_AGENCY_REQUEST,
+                CurrentStatus.ERR_DELIVERY_AGENCY_STATUS,
+                CurrentStatus.ERR_PURCHASE_AGENCY_CANCEL_REQUEST,
+                CurrentStatus.ERR_SOURCE_REFUND_REQUEST_INQUIRY);
+    }
+
+    public static List<CurrentStatus> getCurrentStatusListContainingShipping() {
+        return List.of(CurrentStatus.DELIVERY_AGENCY_SHIPPING_WAIT,
+                CurrentStatus.DELIVERY_AGENCY_SHIPPING_START,
+                CurrentStatus.DELIVERY_AGENCY_SHIPPING_CUSTOMS);
+    }
+
+    public static List<CurrentStatus> getCurrentStatusList() {
+        return List.of(SOURCE_STATUS_TO_PREPARE,
+                PURCHASE_AGENCY_REQUEST,
+                SOURCE_INVOICE_UPDATE,
+                PURCHASE_AGENCY_COMPLETE,
+                PURCHASE_AGENCY_CANCEL_REQUEST,
+                PURCHASE_AGENCY_CANCEL_COMPLETE,
+                DELIVERY_AGENCY_REQUEST,
+                DELIVERY_AGENCY_SHIPPING_WAIT,
+                DELIVERY_AGENCY_SHIPPING_START,
+                DELIVERY_AGENCY_SHIPPING_CUSTOMS,
+                DELIVERY_AGENCY_COMPLETE,
+                ERR_SOURCE_STATUS_TO_PREPARE,
+                ERR_PURCHASE_AGENCY_REQUEST,
+                ERR_PURCHASE_AGENCY_CANCEL_REQUEST,
+                ERR_DELIVERY_AGENCY_REQUEST,
+                ERR_DELIVERY_AGENCY_UPDATE,
+                ERR_DELIVERY_AGENCY_STATUS,
+                ERR_SOURCE_INVOICE_UPDATE,
+                ERR_SOURCE_REFUND_REQUEST_INQUIRY,
+                CANCEL_COMPLETE_INVALID_QUANTITY,
+                CANCEL_COMPLETE_INVALID_PRICE,
+                CANCEL_COMPLETE_INVALID_ASIN,
+                HANDLE_MANUALLY,
+                REFUND_COMPLETE);
+    }
+
+}

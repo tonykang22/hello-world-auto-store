@@ -1,0 +1,30 @@
+server:
+  port: SECRET
+
+spring:
+  datasource:
+    url: SECRET
+    username: SECRET
+    password: SECRET
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    dbcp2:
+      validation-query: "SELECT 1"
+      test-on-borrow: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+
+logging:
+  config: classpath:logback-${spring.profiles.active}.xml
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+slack:
+  success:
+    url: SECRET
+  error:
+    url: SECRET
+
+root:
+  path: /root/hello-world-auto-store
