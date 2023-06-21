@@ -1,3 +1,7 @@
+> 해당 repository는 private repository의 일부를 복사한 소개 목적의 repository로 실제 실행은 불가합니다.
+
+<br>
+
 # hello-world-auto-store
 
 ## Overview
